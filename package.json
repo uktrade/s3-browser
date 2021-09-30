@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server \"your_files\" --files \"your_files/*.html\""
+    "start": "browser-sync start --server \"your_files\" --files \"your_files/*.html\"",
+    "prettier": "prettier . --check"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/uktrade/s3-browser#readme",
   "devDependencies": {
-    "browser-sync": "^2.27.5"
+    "browser-sync": "^2.27.5",
+    "prettier": "^2.4.1"
   }
 }

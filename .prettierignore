@@ -1,0 +1,5 @@
+dist/**
+.minio
+node_modules/**
+your_files/angular-1.7.8.min.js
+your_files/aws-sdk-2.521.0.min.js

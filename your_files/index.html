@@ -139,7 +139,7 @@
                                         <td class="govuk-table__cell govuk-table__cell--numeric govuk-table__cell-progress">
                                             <span ng-if="file.progress === undefined && file.error === undefined">...</span>
                                             <strong ng-if="file.progress !== undefined && file.error === undefined" class="govuk-tag progress-percentage" ng-class="{'progress-percentage-complete': file.progress == 100}">{{ file.progress + '%' }}</strong>
-                                            <strong ng-if="file.error !== undefined" class="govuk-tag progress-error" title="{{ file.error }}">{{ file.error }}</strong></td>
+                                            <strong ng-if="file.error !== undefined" class="govuk-tag progress-error" title="{{ file.error }}">{{ file.error }}</strong>
                                         </td>
                                     </tr>
                                 </tbody>
