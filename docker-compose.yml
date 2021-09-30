@@ -12,7 +12,7 @@ services:
       - "9000:9000"
       - "9001:9001"
     volumes:
-      - ".local/minio/data:/data"
+      - ".minio/data:/data"
     entrypoint: sh
     command: ['-c', 'mkdir -p /data/my-bucket && minio server /data --console-address ":9001" ']
 
