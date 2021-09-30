@@ -1,6 +1,5 @@
 version: "3.4"
 services:
-
   minio:
     image: minio/minio
     environment:
@@ -14,6 +13,8 @@ services:
     volumes:
       - ".minio/data:/data"
     entrypoint: sh
-    command: ['-c', 'mkdir -p /data/my-bucket && minio server /data --console-address ":9001" ']
-
-
+    command:
+      [
+        "-c",
+        'mkdir -p /data/my-bucket && minio server /data --console-address ":9001" ',
+      ]

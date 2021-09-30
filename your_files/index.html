@@ -2,7 +2,6 @@
 <head>
     <link rel="stylesheet" href="explorer.css" />
     <script src="angular-1.7.8.min.js"></script>
-
 </head>
 <body style="background-color:#ccc">
 <div style="width:960px;margin:0 auto;background-color:white;padding:1rem;">
@@ -254,40 +253,17 @@
                     </tbody>
                 </table>
             </div>
+
             <div ng-if="inBigdata" class="govuk-inset-text" ng-cloak>
                 <p class="govuk-body">Files in the <code>{{ :: bigdataPrefix }}</code> folder are not automatically accessible from your tools in the same way other files are. However, they can be manually accessed. For example, after uploading a file <code>bigdata/file.csv</code>, you can create a Pandas DataFrame in a JupyterLab Python notebook by running the following code.</p>
-                    <code><pre>import os
-import pandas as pd
-import boto3
-
-client = boto3.client('s3', region_name='eu-west-2')
-response = client.get_object(
-  Bucket='bucket',
-  Key=os.environ['S3_PREFIX'] + '{{ :: bigdataPrefix }}file.csv'
-)
-df = pd.read_csv(response['Body'])
-</pre></code>
-
-                <p class="govuk-body">You can also create a tibble from this file in R by running the following code.</p>
-
-    <code><pre>library("aws.s3")
-library("readr")
-filename <- "{{ :: bigdataPrefix }}file.csv"
-conn = s3connection(paste(c(
-    "s3://{{ bucket }}/",
-    Sys.getenv("S3_PREFIX"), filename),
-    collapse=""
-))
-tb = read_csv(conn)
-close(conn)</pre></code>
-
+                    <code><pre>
         </div>
     </div>
 
 
     <script src="aws-sdk-2.521.0.min.js"></script>
     <script src="regenerator-runtime.js"></script>
-    <!-- Generated from explorer-v1.js using https://babeljs.io/repl manually -->
+
     <script src="explorer.js"></script>
     <script>
 
@@ -301,8 +277,6 @@ close(conn)</pre></code>
         };
     });
     </script>
-
-
 </div>
 </body>
 </html>
