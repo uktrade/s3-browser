@@ -1,4 +1,71 @@
+* {
+    margin:0;
+    padding:0;
+}
 body, input, button {
-    font-size: 16pt;
+    font-size: 12pt;
     font-family: monospace;
+}
+
+.browser {
+    border: solid;
+}
+
+.browser-header {
+    background: #005ea5;
+    color: white;
+    display: flex;
+    align-items: center;
+    /*height: 40px;*/
+    margin-bottom: 1rem;
+}
+
+.browser-breadcrumbs {
+    flex: 0 1 100%;
+}
+
+.browser-breadcrumb {
+    display: inline;
+    cursor: pointer;
+    /*position: relative;*/
+    /*top: 2px;*/
+}
+
+.browser-breadcrumb:before {
+    content: "/";
+    vertical-align: middle;
+    position: relative;
+    color: white;
+    /*font-size: 30px;*/
+    top: 1px;
+}
+
+@media (min-width: 40.0625em) {
+    .browser-breadcrumb:after {
+        /*font-size: 39px;*/
+        /*top: 3px;*/
+    }
+}
+
+.browser-breadcrumb-link,
+.browser-breadcrumb-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.browser-breadcrumb-link:focus {
+    background: #ffbf47;
+    color: black;
+}
+
+.browser table {
+    width: 100%;
+}
+
+.browser table th {
+    text-align: left;
+}
+
+.browser table .header--checkbox {
+    width: 25px;
 }
