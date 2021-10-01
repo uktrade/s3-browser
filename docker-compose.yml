@@ -1,0 +1,20 @@
+version: "3.4"
+services:
+  minio:
+    image: minio/minio
+    environment:
+      MINIO_ROOT_USER: AAAAAAAAAAAAAAAAAAAA
+      MINIO_ROOT_PASSWORD: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      MINIO_REGION: eu-west-2
+      MINIO_API_CORS_ALLOW_ORIGIN: "*"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ".minio/data:/data"
+    entrypoint: sh
+    command:
+      [
+        "-c",
+        'mkdir -p /data/my-bucket && minio server /data --console-address ":9001" ',
+      ]

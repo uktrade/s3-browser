@@ -1,0 +1,26 @@
+{
+  "name": "s3-browser",
+  "version": "1.0.0",
+  "description": "> Browse, explore or find files hosted in S3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server \"your_files\" --files \"your_files/*.html\"",
+    "prettier": "prettier . --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uktrade/s3-browser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uktrade/s3-browser/issues"
+  },
+  "homepage": "https://github.com/uktrade/s3-browser#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "prettier": "^2.4.1"
+  }
+}
