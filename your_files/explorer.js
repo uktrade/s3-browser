@@ -46,7 +46,7 @@ angular.module("aws-js-s3-explorer").factory("s3", (Config) => {
       // }
       this.accessKeyId = "AAAAAAAAAAAAAAAAAAAA";
       this.secretAccessKey = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-      // this.sessionToken = "response.SessionToken";
+      this.sessionToken = "bbbbbbb";
 
       const now = new Date();
       // this.expiration = new Date(now.getFullYear()-1, now.getMonth(), now.getDay());

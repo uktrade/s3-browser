@@ -1,67 +1,29 @@
 <DOCTYPE html>
   <html lang="en-GB">
+
   <head>
-    <link rel="stylesheet" href="site.css"/>
+    <link rel="stylesheet" href="site.css" />
 
   </head>
+
   <body>
-  <h1>React 101</h1>
 
-  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-  <!-- Load our React component. -->
-  <!-- <script src="like_button.js"></script> -->
+    <div style="display:flex;flex-direction: column;height:100vh">
 
-  <div id="root"></div>
+    <div style="display:flex;flex-direction: row;flex:1">
+      <div id="root" style="flex:1;"></div>
 
-<br>
+      <div class="browser" style="flex:1;display:flex;">
+        <iframe src="/your_files" style="flex:1"></iframe>
+      </div>
 
-  <div class="browser">
-    <h1>Your files</h1>
-
-    <div class="browser-header">
-      <button>Refresh</button>
-      <ul class="browser-breadcrumbs">
-        <li class="browser-breadcrumb">path</li>
-        <li class="browser-breadcrumb">to</li>
-        <li class="browser-breadcrumb">current</li>
-      </ul>
-      <button>New folder</button>
-      <button>Upload files</button>
-      <button>Delete x objects</button>
     </div>
-
-    <input type="file" multiple/>
-
-    <table style="table-layout:fixed">
-      <thead>
-      <tr>
-        <td class="header--checkbox"></td>
-        <th>Name</th>
-        <th>Last modified</th>
-        <th>Size</th>
-        <th>Details</th>
-      </tr>
-      </thead>
-      <tbody>
-      <!-- TODO - Add bigdata markup -->
-
-      <tr>
-        <td>
-          <input type="checkbox"/>
-        </td>
-        <td><a href="#">Filename</a></td>
-        <td>dd/mm/yyyy</td>
-        <td>20GB</td>
-        <td>Create table</td>
-      </tr>
-      </tbody>
-    </table>
-
-  </div>
-  <script type="text/babel" src="browser.jsx"></script>
+    </div>
+    <script type="text/babel" src="browser.jsx"></script>
   </body>
 
   </html>
