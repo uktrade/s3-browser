@@ -191,6 +191,7 @@ angular
       };
       try {
         response = await s3.listObjectsV2(params).promise();
+        window.jsonresponse = response;
         $scope.$apply(function () {
           $scope.bigdata =
             prefix == originalPrefix
