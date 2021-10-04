@@ -5,6 +5,10 @@ class Header extends React.Component {
 }
 
 class FileList extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props.files);
+  }
   render() {
     return (
       <table>
@@ -25,23 +29,38 @@ class FileList extends React.Component {
 class Browser extends React.Component {
   constructor(props) {
     super(props);
+
+    console.log(props.proxy);
     this.state = {
       accessKey: "AAAAA",
     };
     console.log("In the browser ctor");
   }
+
+  componentDidMount() {
+    console.log("componentDidMount");
+    this.props.proxy
+      .listObjects()
+      .then((data) => {
+        this.state.currentFiles = data;
+      })
+      .catch((err) => console.error(err));
+  }
+
   render() {
+    const files = [];
     return (
       <div className="browser">
         <h1>I am a browser</h1>
         <pre>
-        <code>accessKey:{this.state.accessKey}</code>
+          <code>accessKey:{this.state.accessKey}</code>
         </pre>
         <Header />
-        <FileList />
+        <FileList files={this.state.currentFiles} />
       </div>
     );
   }
 }
 
-ReactDOM.render(<Browser />, document.getElementById("root"));
+const proxy = new S3Proxy("my-bucket");
+ReactDOM.render(<Browser proxy={proxy} />, document.getElementById("root"));
