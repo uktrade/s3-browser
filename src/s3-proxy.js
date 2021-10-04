@@ -65,7 +65,17 @@ class S3Proxy {
     });
   }
 
+  enrichObjectContents(data) {
+    data.Contents.forEach((d) => {
+      d.isCsv = d.Key.substr(d.Key.length - 3, d.Key.length) === "csv";
+    });
+    return data;
+  }
+
   listObjects() {
-    return Promise.resolve(testContents);
+    const data = this.enrichObjectContents(testContents);
+    console.log(data);
+
+    return Promise.resolve(data);
   }
 }

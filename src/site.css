@@ -69,3 +69,31 @@ body, input, button {
 .browser table .header--checkbox {
     width: 25px;
 }
+
+
+.modal-background {
+    background-color: black;
+    opacity: 0.5;
+    position:fixed;
+    top:0;
+    height:100%;
+    width:100%;
+}
+
+.modal-container {
+    position:fixed;
+    top:10px;
+    width: 600px;
+    left:50%;
+    margin-left:-300px;
+    height:100px;
+    
+    background-color: white;
+
+}
+
+.folder, .file {
+    /* fake link */
+    text-decoration: underline;
+    cursor: pointer;
+}
