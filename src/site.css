@@ -1,14 +1,16 @@
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
+
 body, input, button {
-    font-size: 12pt;
-    font-family: monospace;
+    font-size: 16pt;
+    font-family:-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;;
 }
 
 .browser {
-    border: solid;
+    /*border: solid;*/
 }
 
 .browser-header {
@@ -21,8 +23,20 @@ body, input, button {
 }
 
 .browser-breadcrumbs {
+    padding-left: 15px;
+    margin-bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
     flex: 0 1 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+    direction: rtl;
+    text-align: left;
 }
+
 
 .browser-breadcrumb {
     display: inline;
@@ -74,25 +88,100 @@ body, input, button {
 .modal-background {
     background-color: black;
     opacity: 0.5;
-    position:fixed;
-    top:0;
-    height:100%;
-    width:100%;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .modal-container {
-    position:fixed;
-    top:10px;
+    position: fixed;
+    top: 10px;
     width: 600px;
-    left:50%;
-    margin-left:-300px;
-    height:100px;
-    
+    left: 50%;
+    margin-left: -300px;
+    height: 100px;
+
     background-color: white;
 
 }
 
-.folder, .file {
+
+.navbutton {
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    background: transparent;
+    color: #ffffff;
+    flex: 0 0 auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.navbutton[disabled] {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.navbutton:focus {
+    position: relative;
+    z-index: 1;
+    outline: 4px solid #ffbf47;
+    background: #005ea5;
+}
+
+.navbutton:active {
+    position: relative;
+    z-index: 1;
+    top: 2px;
+    background: #005ea5;
+}
+
+.navbutton + .navbutton:focus,
+.browser-breadcrumbs + .navbutton:focus {
+    border-left: 2px solid transparent;
+}
+
+.navbutton-icon {
+    display: block;
+    margin: auto;
+    height: 20px;
+}
+
+@media (min-width: 40.0625em) {
+    .navbutton {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .navbutton-icon {
+        height: 24px;
+    }
+
+    .navbutton-icon-small {
+        height: 22px;
+    }
+
+    .navbutton-icon-large {
+        height: 26px;
+    }
+}
+
+.navbutton + .navbutton,
+.browser-breadcrumbs + .navbutton,
+.browser-breadcrumbs {
+    border-left: 2px solid white;
+}
+
+
+.folder, .file, .create-table {
     /* fake link */
     text-decoration: underline;
     cursor: pointer;

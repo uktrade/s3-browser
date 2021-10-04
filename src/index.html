@@ -11,17 +11,12 @@
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="aws-sdk-2.521.0.min.js"></script>
 
-    <div style="display:flex;flex-direction: column;height:100vh">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div id="root" ></div>
 
-    <div style="display:flex;flex-direction: row;flex:1">
-      <div id="root" style="flex:1;"></div>
 
-      <div class="browser" style="flex:1;display:flex;">
-        <iframe src="/your_files" style="flex:1"></iframe>
-      </div>
-
-    </div>
     </div>
     <script src="s3-proxy.js"></script>
     <script type="text/babel" src="browser.jsx"></script>

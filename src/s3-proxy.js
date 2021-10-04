@@ -41,41 +41,65 @@ const testContents = {
   KeyCount: 3,
 };
 
-class S3Proxy {
-  constructor(bucketName, initialPrefix) {
-    if (!bucketName) throw "bucketName is required";
-
-    this.bucketName = bucketName;
-    this.prefix = initialPrefix || "/";
-
-    console.debug("S3 proxy ctor");
+class Credentials extends AWS.Credentials {
+  constructor() {
+    super();
+    this.expiration = 0;
   }
 
-  /**
-   * (Private method)
-   * magically returns the AWS S3 credentials
-   * @returns {Promise<{}>}
-   */
-  getCredentials() {
-    return Promise.resolve({
-      accessKey: "AAAA",
-      secretKey: "bbbbb",
-      sessionKey: "ccccc",
-      endpoint: "http://localhost:9000",
+  async refresh(callback) {
+    // try {
+    //     var response = await fetchJSON(Config.credentialsUrl);
+    // } catch(err) {
+    //     callback(err);
+    //     return
+    // }
+    console.log("refresh");
+    this.accessKeyId = "AAAAAAAAAAAAAAAAAAAA";
+    this.secretAccessKey = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    // this.sessionToken = "bbbbbbb";
+
+    const now = new Date();
+    // this.expiration = new Date(now.getFullYear()-1, now.getMonth(), now.getDay());
+    callback();
+    return Promise.resolve();
+  }
+
+  needsRefresh() {
+    return true; //this.expiration - 60 < Date.now();
+  }
+}
+
+class S3Proxy {
+  constructor(config) {
+    AWS.config.update({
+      credentials: new Credentials(),
+      region: config.region,
     });
+
+    const ep = new AWS.Endpoint("http://localhost:9000");
+    this.s3 = new AWS.S3({ endpoint: ep, s3ForcePathStyle: true });
   }
 
   enrichObjectContents(data) {
     data.Contents.forEach((d) => {
       d.isCsv = d.Key.substr(d.Key.length - 3, d.Key.length) === "csv";
+      d.formattedDate = new Date(d.LastModified);
     });
     return data;
   }
 
-  listObjects() {
-    const data = this.enrichObjectContents(testContents);
-    console.log(data);
+  async listObjects(params) {
+    console.log("listObjects", arguments);
 
-    return Promise.resolve(data);
+    try {
+      const response = await this.s3.listObjectsV2(params).promise();
+      console.log("/here");
+
+      const data = this.enrichObjectContents(response);
+      return data;
+    } catch (err) {
+      console.error(err);
+    }
   }
 }

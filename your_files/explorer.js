@@ -202,6 +202,7 @@ angular
           $scope.prefixes = response.CommonPrefixes.filter((prefix) => {
             return prefix.Prefix != originalPrefix + Config.bigdataPrefix;
           });
+
           $scope.objects = response.Contents.filter((object) => {
             return object.Key != prefix;
           }).map((object) => {
@@ -210,6 +211,7 @@ angular
               "csv";
             return object;
           });
+
           $scope.initialising = false;
           $scope.inBigdata = startsWith(
             currentPrefix,
