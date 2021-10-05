@@ -46,7 +46,7 @@ angular.module("aws-js-s3-explorer").factory("s3", (Config) => {
       // }
       this.accessKeyId = "AAAAAAAAAAAAAAAAAAAA";
       this.secretAccessKey = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-      // this.sessionToken = "response.SessionToken";
+      this.sessionToken = "bbbbbbb";
 
       const now = new Date();
       // this.expiration = new Date(now.getFullYear()-1, now.getMonth(), now.getDay());
@@ -191,6 +191,7 @@ angular
       };
       try {
         response = await s3.listObjectsV2(params).promise();
+        window.jsonresponse = response;
         $scope.$apply(function () {
           $scope.bigdata =
             prefix == originalPrefix
@@ -201,6 +202,7 @@ angular
           $scope.prefixes = response.CommonPrefixes.filter((prefix) => {
             return prefix.Prefix != originalPrefix + Config.bigdataPrefix;
           });
+
           $scope.objects = response.Contents.filter((object) => {
             return object.Key != prefix;
           }).map((object) => {
@@ -209,6 +211,7 @@ angular
               "csv";
             return object;
           });
+
           $scope.initialising = false;
           $scope.inBigdata = startsWith(
             currentPrefix,

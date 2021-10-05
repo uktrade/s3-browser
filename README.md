@@ -15,14 +15,14 @@ You will need the following technologies to develop this locally
 ### Check out the source code
 
 ```shell
-
-    docker compose up
+    # Run minio in the background
+    docker compose up -d
     # (Time passes... containers are built)
 
     npm install
     
     npm start
-    # (This will open the existing files in your default browser)    
+    # (This will open the html files in your default browser)    
     
     
 ```
