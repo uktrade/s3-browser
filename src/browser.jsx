@@ -160,7 +160,9 @@ class FileList extends React.Component {
       <table>
         <thead>
           <tr>
-            <td className="header--checkbox"></td>
+            <td className="header--checkbox">
+              <input type="checkbox" />
+            </td>
             <th>Name</th>
             <th>Last modified</th>
             <th>Size</th>
@@ -171,7 +173,9 @@ class FileList extends React.Component {
           {folders.map((folder) => {
             return (
               <tr key={folder.Prefix}>
-                <td></td>
+                <td>
+                  <input type="checkbox" />
+                </td>
                 <td>
                   <Folder
                     text={folder.Prefix}
@@ -246,7 +250,7 @@ class Browser extends React.Component {
     console.log("handleFolderClick", arguments);
     console.log(prefix);
     this.setState({ prefix: prefix });
-    await this.refresh();
+    await this.refresh(prefix);
   }
 
   handleBreadcrumbClick() {
@@ -265,10 +269,10 @@ class Browser extends React.Component {
     return data;
   }
 
-  async refresh() {
+  async refresh(prefix) {
     const params = {
       Bucket: this.state.bucketName,
-      Prefix: this.state.prefix,
+      Prefix: prefix || this.state.prefix,
       Delimiter: "/",
     };
 

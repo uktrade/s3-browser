@@ -3,10 +3,14 @@
     padding: 0;
 }
 
-body, input, button {
-    font-size: 16pt;
-    font-family:-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+body, input, button, td {
+    font-size: 12pt;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;;
+}
+
+td {
+    line-height: 2;
 }
 
 .browser {
@@ -74,6 +78,11 @@ body, input, button {
 
 .browser table {
     width: 100%;
+}
+
+.browser table  th, td {
+      /*border: 1px solid black;*/
+
 }
 
 .browser table th {
