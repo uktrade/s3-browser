@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx npm-force-resolutions",
     "start": "browser-sync start --server \".\" --files \"src\" --startPath 'src/'",
     "prettier": "prettier . --check"
   },
@@ -22,5 +23,8 @@
   "devDependencies": {
     "browser-sync": "^2.27.5",
     "prettier": "^2.4.1"
+  },
+  "resolutions": {
+    "follow-redirects": "1.14.7"
   }
 }
