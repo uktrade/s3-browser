@@ -4,6 +4,10 @@
   "description": "> Browse, explore or find files hosted in S3",
   "main": "webpack.common.js",
   "aws-sdk": "^2.1193.0",
+  "@babel/core": "^7.14.6",
+  "@babel/preset-env": "^7.14.7",
+  "@babel/preset-react": "^7.14.5",
+  "babel-loader": "^8.2.2",
   "classnames": "^2.3.1",
   "eventemitter3": "^4.0.7",
   "prettier": "^2.7.1",
@@ -11,11 +15,14 @@
   "sass-loader": "^13.0.2",
   "webpack": "^5.42.0",
   "webpack-cli": "^4.7.2",
+  "webpack-bundle-tracker": "^1.1.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "browser-sync start --server \".\" --files \"src\" --startPath 'src/'",
+    "babel": "babel src -d lib",
     "prettier": "prettier src/your-files --write",
-    "dev": "./node_modules/.bin/webpack serve --config webpack.dev.js"
+    "dev": "./node_modules/.bin/webpack serve --config src/js/react_apps/webpack.dev.js",
+    "build": "./node_modules/.bin/webpack build --config src/js/react_apps/webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -29,10 +36,16 @@
   },
   "homepage": "https://github.com/uktrade/s3-browser#readme",
   "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
     "browser-sync": "^2.27.11",
     "prettier": "^2.4.1",
     "webpack": "^5.75.0",
+    "webpack-bundle-tracker": "^1.8.0",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
   }
 }
