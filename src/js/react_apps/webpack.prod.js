@@ -7,7 +7,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = merge(common, {
   mode: "production",
   output: {
-    publicPath: "/__django_static/js/bundles/",
+    publicPath: "../js/bundles/",
   },
   plugins: [
     new webpack.DefinePlugin({
