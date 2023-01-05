@@ -2,11 +2,17 @@
   "name": "s3-browser",
   "version": "1.0.0",
   "description": "> Browse, explore or find files hosted in S3",
-  "main": "index.js",
+  "main": "webpack.common.js",
+  "aws-sdk": "^2.1193.0",
+  "classnames": "^2.3.1",
+  "eventemitter3": "^4.0.7",
+  "prettier": "^2.7.1",
+  "sass": "^1.54.2",
+  "sass-loader": "^13.0.2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "browser-sync start --server \".\" --files \"src\" --startPath 'src/'",
-    "prettier": "prettier . --check"
+    "prettier": "prettier src/your-files --write"
   },
   "repository": {
     "type": "git",
