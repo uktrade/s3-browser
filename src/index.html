@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="govuk-template">
-<head>
-    <link rel="stylesheet" href="site.css" />
-</head>
+  <html lang="en-GB">
+  <head>
+    <link rel="stylesheet" href="site.css"/>
+  </head>
 
-<body>
+  <body>
   <h1 class="govuk-heading-l">Your files</h1>
-  <div id="your-files-app"></div>
-  <!-- Icons provided by Font Awesome https://fontawesome.com/license -->
-  <div>
-
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <!-- Icons provided by Font Awesome https://fontawesome.com/license -->
+    <div id="your-files-app"></div>
+  </div>
   <script src="aws-sdk-2.521.0.min.js"></script>
-
   <script>
     const YOURFILES_CONFIG = {
       region: 'eu-west-2',
       bucketName: "my-bucket",
-      initialPrefix: "",
       bigdataPrefix: 'bigdata/',
       endpointUrl: 'http://localhost:9000',
       credentialsUrl: {
@@ -25,12 +23,16 @@
         "Expiration": 0,
       },
       createTableUrl: 'create-table/confirm',
-
+      teamsPrefix: 'teams/',
+      // the following may need to be set:
+      s3Path: '',
+      rootUrl: '/src/',
+      initialPrefix: '',
+      rootPrefix: '',
+      teamsPrefixes: [],
     };
   </script>
-
-    <script type="module" src="js/bundles/yourfiles.js"></script>
-
-  </div>
-</body>
+  <script type="module" src="js/bundles/yourfiles.js"></script>
+  </body>
 </html>
+</DOCTYPE>
