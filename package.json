@@ -1,6 +1,6 @@
 {
   "name": "s3-browser",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "> Browse, explore or find files hosted in S3",
   "main": "index.js",
   "scripts": {
