@@ -1,7 +1,7 @@
 {
   "name": "@uktrade/s3-browser",
   "version": "0.0.1",
-  "description": "> Browse, explore or find files hosted in S3",
+  "description": "Browse files on S3, upload files to S3, and download files from S3",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
