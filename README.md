@@ -2,7 +2,7 @@
 
 Browse files on S3, upload files to S3, and download files from S3.
 
-https://user-images.githubusercontent.com/13877/211153724-15f153a3-2882-4d17-85be-58939f54ba30.mov
+https://user-images.githubusercontent.com/13877/211154130-188f1bdf-458b-4ee2-8e89-969060d52aa5.mov
 
 
 ## Installation
