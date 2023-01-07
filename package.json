@@ -1,6 +1,6 @@
 {
   "name": "@uktrade/s3-browser",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Browse files on S3, upload files to S3, and download files from S3",
   "main": "webpack.common.js",
   "aws-sdk": "^2.1193.0",
