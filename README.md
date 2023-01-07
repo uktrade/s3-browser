@@ -37,4 +37,4 @@ npm start
 
 ## Licenses
 
-The code of s3-browser is released under the MIT License. However, bundled are several [Font Awesome Free](https://fontawesome.com/license/free) icons in SVG format, licensed under the [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
+The code of s3-browser is released under the [MIT License](./LICENSE). However, bundled are several [Font Awesome Free](https://fontawesome.com/license/free) icons in SVG format, licensed under the [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
