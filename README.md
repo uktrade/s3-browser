@@ -1,6 +1,15 @@
 # s3-browser
 
-> Browse, explore or find files hosted in S3
+Browse files on S3, upload files to S3, and download files from S3.
+
+
+## Installation
+
+```shell
+npm i @uktrade/s3-browser
+```
+
+Then import (s3-browser) from `s3-browser`
 
 
 ## Run locally
@@ -15,14 +24,12 @@ You will need the following technologies to develop this locally
 ### Check out the source code
 
 ```shell
-    # Run minio in the background
-    docker compose up -d
-    # (Time passes... containers are built)
+# Run minio in the background
+docker compose up -d
+# (Time passes... containers are built)
 
-    npm install
-    
-    npm start
-    # (This will open the html files in your default browser)    
-    
-    
-```
+npm install
+
+npm start
+# (This will open the html files in your default browser)
+````
